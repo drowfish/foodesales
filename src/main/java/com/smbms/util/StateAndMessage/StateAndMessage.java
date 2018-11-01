@@ -25,6 +25,7 @@ public class StateAndMessage {
     public final static String NOLOGIN = "未登录";
 
     public final static String NOUSER = "未查询到用户";
+    public final static String NOMENU = "未查询到数据";
 
     public final static String REMOVESUCCESS = "删除成功";
     public final static String REMOVEFAIL = "删除失败";

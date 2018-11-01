@@ -7,10 +7,7 @@ import com.smbms.service.UserSercive;
 import com.smbms.util.Result;
 import com.smbms.util.StateAndMessage.StateAndMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -67,7 +64,7 @@ public class UserController {
     }
 
     @RequestMapping("/userList")
-    public Result userList(Integer currentPage,Integer limit){
+    public Result userList( Integer currentPage, Integer limit){
         PageHelper.startPage(currentPage,limit);
         List<User> list = userSercive.userList(currentPage,limit);
         PageInfo<User> pageInfo = new PageInfo<User>(list);
