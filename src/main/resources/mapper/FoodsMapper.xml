@@ -242,4 +242,30 @@
       salesvolume = #{salesvolume,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <!--private Integer id;-->
+
+  <!--private String name;-->
+
+  <!--private Img img;-->
+
+  <!--private Float price;-->
+
+  <!--private Classification classification;-->
+
+  <!--private Integer stock;-->
+
+  <!--private Integer salesvolume;-->
+  <resultMap type="com.smbms.entity.FoodList" id="FoodResult">
+    <id column="id" property="id"/>
+    <result column="name" property="name"/>
+    <result column="price" property="price"/>
+    <result column="stock" property="stock"/>
+    <result column="salesvolume" property="salesvolume"/>
+    <association property="img" column="img" select="com.smbms.dao.ImgMapper.selectByPrimaryKey" />
+    <association property="classification" javaType="com.smbms.entity.Classification" column="classification" select="com.smbms.dao.ClassificationMapper.selectByPrimaryKey" />
+    <!--id,name,price,stock,salesvolume-->
+  </resultMap>
+  <select id="getFoodList" resultMap="FoodResult">
+    select * from tb_foods
+  </select>
 </mapper>

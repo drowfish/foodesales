@@ -2,6 +2,7 @@ package com.smbms.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.smbms.entity.FoodList;
 import com.smbms.entity.Foods;
 import com.smbms.service.FoodService;
 import com.smbms.util.Result;
@@ -25,8 +26,8 @@ public class FoodsController {
     @RequestMapping("/foodsList")
     public Result foodsList(Integer limit, Integer currentPage){
         PageHelper.startPage(currentPage,limit);
-        List<Foods> list = foodService.foodsList();
-        PageInfo<Foods> pageInfo = new PageInfo<Foods>(list);
+        List<FoodList> list = foodService.getFoodList();
+        PageInfo<FoodList> pageInfo = new PageInfo<FoodList>(list);
         if(list.isEmpty())
             return new Result(StateAndMessage.FAIL,StateAndMessage.NOUSER,null);
         return new Result(StateAndMessage.SUCCESS,"",pageInfo);

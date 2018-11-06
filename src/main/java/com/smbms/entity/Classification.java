@@ -29,4 +29,12 @@ public class Classification {
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Classification{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -1,5 +1,6 @@
 package com.smbms.dao;
 
+import com.smbms.entity.FoodList;
 import com.smbms.entity.Foods;
 import com.smbms.entity.FoodsExample;
 import java.util.List;
@@ -27,4 +28,6 @@ public interface FoodsMapper {
     int updateByPrimaryKeySelective(Foods record);
 
     int updateByPrimaryKey(Foods record);
+
+    List<FoodList> getFoodList();
 }
