@@ -84,4 +84,17 @@ public class Foods {
     public void setSalesvolume(Integer salesvolume) {
         this.salesvolume = salesvolume;
     }
+
+    @Override
+    public String toString() {
+        return "Foods{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", img=" + img +
+                ", price=" + price +
+                ", classification=" + classification +
+                ", stock=" + stock +
+                ", salesvolume=" + salesvolume +
+                '}';
+    }
 }

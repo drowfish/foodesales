@@ -9,6 +9,7 @@ import com.smbms.util.Result;
 import com.smbms.util.StateAndMessage.StateAndMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -31,5 +32,20 @@ public class FoodsController {
         if(list.isEmpty())
             return new Result(StateAndMessage.FAIL,StateAndMessage.NOUSER,null);
         return new Result(StateAndMessage.SUCCESS,"",pageInfo);
+    }
+
+    @RequestMapping("/deleteFood")
+    public Result deleteFood(Integer id){
+        System.out.println();
+        if(foodService.deleteFood(id)>0)
+            return new Result(StateAndMessage.SUCCESS,StateAndMessage.REMOVESUCCESS,null);
+        return new Result(StateAndMessage.FAIL,StateAndMessage.REMOVEFAIL,null);
+    }
+
+    @RequestMapping(value = "/updateFood")
+    public Result updateFood(@RequestBody Foods foods){
+        if(foodService.updatFood(foods)>0)
+            return new Result(StateAndMessage.SUCCESS,StateAndMessage.UPDATEFOODSUCCESS,null);
+        return new Result(StateAndMessage.FAIL,StateAndMessage.UPDATEFOODFAIL,null);
     }
 }

@@ -100,6 +100,9 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.smbms.entity.Img" >
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      select LAST_INSERT_ID()
+    </selectKey>
     insert into tb_img (id, url, MD5)
     values (#{id,jdbcType=INTEGER}, #{url,jdbcType=VARCHAR}, #{md5,jdbcType=VARCHAR})
   </insert>
