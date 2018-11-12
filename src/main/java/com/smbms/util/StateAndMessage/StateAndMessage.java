@@ -27,4 +27,8 @@ public class StateAndMessage {
 
     public final static String UPDATEFOODSUCCESS = "食品更新成功";
     public final static String UPDATEFOODFAIL = "食品更新失败";
+
+    public final static String ADDFOODSUCCESS = "食品添加成功";
+    public final static String ADDFOODFAIL = "食品添加失败";
+
 }

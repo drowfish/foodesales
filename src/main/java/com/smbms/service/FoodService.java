@@ -32,4 +32,8 @@ public class FoodService {
     public int updatFood(Foods foods){
         return foodsMapper.updateByPrimaryKey(foods);
     }
+
+    public int addFood(Foods foods){
+        return foodsMapper.insert(foods);
+    }
 }
