@@ -7,7 +7,7 @@
       <arg column="foods_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="order_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
       <arg column="num" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="total_fee" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="total_fee" jdbcType="INTEGER" javaType="java.lang.Integer" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -105,7 +105,7 @@
     insert into tb_order_item (id, foods_id, order_id, 
       num, total_fee)
     values (#{id,jdbcType=INTEGER}, #{foodsId,jdbcType=INTEGER}, #{orderId,jdbcType=INTEGER}, 
-      #{num,jdbcType=INTEGER}, #{totalFee,jdbcType=VARCHAR})
+      #{num,jdbcType=INTEGER}, #{totalFee,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.smbms.entity.OrderItem" >
     insert into tb_order_item
@@ -140,7 +140,7 @@
         #{num,jdbcType=INTEGER},
       </if>
       <if test="totalFee != null" >
-        #{totalFee,jdbcType=VARCHAR},
+        #{totalFee,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -166,7 +166,7 @@
         num = #{record.num,jdbcType=INTEGER},
       </if>
       <if test="record.totalFee != null" >
-        total_fee = #{record.totalFee,jdbcType=VARCHAR},
+        total_fee = #{record.totalFee,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -179,7 +179,7 @@
       foods_id = #{record.foodsId,jdbcType=INTEGER},
       order_id = #{record.orderId,jdbcType=INTEGER},
       num = #{record.num,jdbcType=INTEGER},
-      total_fee = #{record.totalFee,jdbcType=VARCHAR}
+      total_fee = #{record.totalFee,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -197,7 +197,7 @@
         num = #{num,jdbcType=INTEGER},
       </if>
       <if test="totalFee != null" >
-        total_fee = #{totalFee,jdbcType=VARCHAR},
+        total_fee = #{totalFee,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -207,7 +207,7 @@
     set foods_id = #{foodsId,jdbcType=INTEGER},
       order_id = #{orderId,jdbcType=INTEGER},
       num = #{num,jdbcType=INTEGER},
-      total_fee = #{totalFee,jdbcType=VARCHAR}
+      total_fee = #{totalFee,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

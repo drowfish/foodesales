@@ -354,62 +354,52 @@ public class OrderItemExample {
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeEqualTo(String value) {
+        public Criteria andTotalFeeEqualTo(Integer value) {
             addCriterion("total_fee =", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotEqualTo(String value) {
+        public Criteria andTotalFeeNotEqualTo(Integer value) {
             addCriterion("total_fee <>", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeGreaterThan(String value) {
+        public Criteria andTotalFeeGreaterThan(Integer value) {
             addCriterion("total_fee >", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeGreaterThanOrEqualTo(String value) {
+        public Criteria andTotalFeeGreaterThanOrEqualTo(Integer value) {
             addCriterion("total_fee >=", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLessThan(String value) {
+        public Criteria andTotalFeeLessThan(Integer value) {
             addCriterion("total_fee <", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLessThanOrEqualTo(String value) {
+        public Criteria andTotalFeeLessThanOrEqualTo(Integer value) {
             addCriterion("total_fee <=", value, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeLike(String value) {
-            addCriterion("total_fee like", value, "totalFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalFeeNotLike(String value) {
-            addCriterion("total_fee not like", value, "totalFee");
-            return (Criteria) this;
-        }
-
-        public Criteria andTotalFeeIn(List<String> values) {
+        public Criteria andTotalFeeIn(List<Integer> values) {
             addCriterion("total_fee in", values, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotIn(List<String> values) {
+        public Criteria andTotalFeeNotIn(List<Integer> values) {
             addCriterion("total_fee not in", values, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeBetween(String value1, String value2) {
+        public Criteria andTotalFeeBetween(Integer value1, Integer value2) {
             addCriterion("total_fee between", value1, value2, "totalFee");
             return (Criteria) this;
         }
 
-        public Criteria andTotalFeeNotBetween(String value1, String value2) {
+        public Criteria andTotalFeeNotBetween(Integer value1, Integer value2) {
             addCriterion("total_fee not between", value1, value2, "totalFee");
             return (Criteria) this;
         }

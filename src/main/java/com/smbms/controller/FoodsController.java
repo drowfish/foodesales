@@ -51,7 +51,6 @@ public class FoodsController {
 
     @RequestMapping("/addFood")
     public Result addFood(@RequestBody Foods foods){
-        System.out.println("1111111111:"+foods);
         if(foodService.addFood(foods)>0)
             return new Result(StateAndMessage.SUCCESS,StateAndMessage.ADDFOODSUCCESS,null);
         return new Result(StateAndMessage.FAIL,StateAndMessage.ADDFOODFAIL,null);

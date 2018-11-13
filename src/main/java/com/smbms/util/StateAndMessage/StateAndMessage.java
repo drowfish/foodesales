@@ -31,4 +31,12 @@ public class StateAndMessage {
     public final static String ADDFOODSUCCESS = "食品添加成功";
     public final static String ADDFOODFAIL = "食品添加失败";
 
+    public final static String GETORDERSUCCESS = "获取订单信息成功";
+    public final static String GETORDERFAIL = "获取订单信息失败";
+
+    public final static String GETORDERSHIPPINGSUCCESS = "获取订单配送信息成功";
+    public final static String GETORDERSHIPPINGFAIL = "获取订单配送信息失败";
+
+    public final static String GETORDERITEMSUCCESS = "获取订单详情信息成功";
+    public final static String GETORDERITEMFAIL = "获取订单详情信息失败";
 }

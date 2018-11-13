@@ -9,9 +9,9 @@ public class OrderItem {
 
     private Integer num;
 
-    private String totalFee;
+    private Integer totalFee;
 
-    public OrderItem(Integer id, Integer foodsId, Integer orderId, Integer num, String totalFee) {
+    public OrderItem(Integer id, Integer foodsId, Integer orderId, Integer num, Integer totalFee) {
         this.id = id;
         this.foodsId = foodsId;
         this.orderId = orderId;
@@ -55,11 +55,11 @@ public class OrderItem {
         this.num = num;
     }
 
-    public String getTotalFee() {
+    public Integer getTotalFee() {
         return totalFee;
     }
 
-    public void setTotalFee(String totalFee) {
-        this.totalFee = totalFee == null ? null : totalFee.trim();
+    public void setTotalFee(Integer totalFee) {
+        this.totalFee = totalFee;
     }
 }
