@@ -63,6 +63,13 @@ public class UserController {
         return new Result(StateAndMessage.SUCCESS,"",null);
     }
 
+    @RequestMapping("/getUserInfo")
+    public Result getUserInfo(HttpSession session){
+        if(session.getAttribute("user")!=null)
+            return new Result(StateAndMessage.SUCCESS,StateAndMessage.GETUSERINFOSUCCESS,session.getAttribute("user"));
+        return new Result(StateAndMessage.FAIL,StateAndMessage.GETUSERINFOFAIL,session.getAttribute("user"));
+    }
+
     @RequestMapping("/userList")
     public Result userList( Integer currentPage, Integer limit){
         PageHelper.startPage(currentPage,limit);

@@ -24,4 +24,8 @@ public class ImgService {
         criteria.andMd5EqualTo(fileMD5);
         return imgMapper.selectByExample(imgExample);
     }
+
+    public Img getImg(Integer id){
+        return imgMapper.selectByPrimaryKey(id);
+    }
 }

@@ -39,4 +39,11 @@ public class StateAndMessage {
 
     public final static String GETORDERITEMSUCCESS = "获取订单详情信息成功";
     public final static String GETORDERITEMFAIL = "获取订单详情信息失败";
+
+    public final static String GETUSERINFOSUCCESS = "用户已登录";
+    public final static String GETUSERINFOFAIL = "用户未登录";
+
+    public final static String GETIMGSUCCESS = "获取图片信息成功";
+    public final static String GETIMGFAIL = "获取图片信息失败";
+
 }

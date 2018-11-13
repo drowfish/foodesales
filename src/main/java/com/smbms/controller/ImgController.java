@@ -48,4 +48,12 @@ public class ImgController {
         }
         return new Result(StateAndMessage.SUCCESS,StateAndMessage.UPLOADSUCCESS,img);
     }
+
+    @RequestMapping("/getImg")
+    public Result getImg(Integer id){
+        Img img = imgService.getImg(id);
+        if(img == null)
+            return new Result(StateAndMessage.FAIL,StateAndMessage.GETIMGFAIL,null);
+        return new Result(StateAndMessage.SUCCESS,StateAndMessage.GETIMGSUCCESS,img);
+    }
 }
