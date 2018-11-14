@@ -25,6 +25,7 @@ public class UserController {
     public Result login(@RequestBody User user, HttpSession session){
         List<User> list = userSercive.login(user);
         Result result = new Result();
+
         if (!list.isEmpty()){
             User user1 = list.get(0);
             if(user.getPassword().equals(user1.getPassword())){
@@ -85,5 +86,14 @@ public class UserController {
         if(userSercive.removeUser(id)>0)
             return new Result(StateAndMessage.SUCCESS,StateAndMessage.REMOVESUCCESS,null);
         return new Result(StateAndMessage.FAIL,StateAndMessage.REMOVEFAIL,null);
+    }
+
+    @RequestMapping("/updateUser")
+    public Result updateUser(@RequestBody User user,HttpSession session){
+        if(userSercive.updateUser(user)>0) {
+            session.setAttribute("user",user);
+            return new Result(StateAndMessage.SUCCESS, StateAndMessage.UPDATEUSERSUCCESS, null);
+        }
+        return new Result(StateAndMessage.FAIL,StateAndMessage.UPDATEUSERFAIL,null);
     }
 }

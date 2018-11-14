@@ -46,4 +46,7 @@ public class StateAndMessage {
     public final static String GETIMGSUCCESS = "获取图片信息成功";
     public final static String GETIMGFAIL = "获取图片信息失败";
 
+    public final static String UPDATEUSERSUCCESS = "更新用户信息成功";
+    public final static String UPDATEUSERFAIL = "更新用户信息失败";
+
 }

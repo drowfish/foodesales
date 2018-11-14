@@ -31,4 +31,8 @@ public class UserSercive {
     public int removeUser(Integer id){
         return userMapper.deleteByPrimaryKey(id);
     }
+
+    public int updateUser(User user){
+        return userMapper.updateByPrimaryKey(user);
+    }
 }
